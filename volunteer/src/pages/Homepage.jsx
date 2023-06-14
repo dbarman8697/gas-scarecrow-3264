@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import "../pages/style.css";
 import logo from "../Images/CONTRIBUTE_NOW.png";
 
 const Homepage = () => {
@@ -14,8 +15,9 @@ const Homepage = () => {
       <div style={{ display: "flex", gap: "30px" }}>
         <img
           src={logo}
-          width={"27%"}
-          style={{ padding: "30px 0px 0px 50px" }}
+          width={"25%"}
+          height={"30%"}
+          style={{ padding: "35px 0px 0px 50px" }}
         />
 
         <div style={{ display: "flex", gap: "30px" }}>
@@ -103,6 +105,18 @@ const Homepage = () => {
             </div>
           </div>
         </div>
+        <div class="Header-nav-inner" style={{ marginTop: "40px" }}>
+          <a href="http://voly.org " class="Header-nav-item">
+            voly.org
+          </a>
+          <a href="https://www.volyinfo.org" class="Header-nav-item">
+            VOLY Info
+          </a>
+          <a href="/donate" class="Header-nav-item" >
+            Donate
+          </a>
+        </div>
+        
       </div>
     </div>
   );

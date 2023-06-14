@@ -1,0 +1,21 @@
+.Header-nav-item {
+  box-shadow: none;
+  border: 2px solid #f03124;
+  color: #f03124;
+  padding: 12px 18px;
+  margin: 0.618em 0.45em;
+  border-radius: 300px;
+  text-decoration: none;
+}
+
+.Header-nav-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  white-space: normal;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14.25px;
+  letter-spacing: 0em;
+  text-transform: uppercase;
+  line-height: 1em;
+}
