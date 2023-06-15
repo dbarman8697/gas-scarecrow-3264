@@ -9,20 +9,20 @@ const Volunteer = () => {
     <div>
       <nav className="top-navbar">
         <div className="left-links">
-          <Link to="/" className="nav1-link">Who We Are</Link>
-          <Link to="/" className="nav1-link">Who We Serve</Link>
+          <Link to="/" className="top-nav-link">Who We Are</Link>
+          <Link to="/" className="top-nav-link">Who We Serve</Link>
         </div>
         <div className="right-links">
-          <Link to="/" className="nav1-link">Create Account</Link>
-          <Link to="/" className="nav1-link">Login</Link>
+          <Link to="/" className="top-nav-link">Create Account</Link>
+          <Link to="/" className="top-nav-link">Login</Link>
         </div>
       </nav>
       <nav className="bottom-navbar">
         <img src={logo} alt="logo" width={"200px"} height={"100px"} />
-        <Link to="/" className="nav2-link">Causes</Link>
-        <Link to="/" className="nav2-link">Opportunities</Link>
-        <Link to="/" className="nav2-link">Teams</Link>
-        <Link to="/" className="nav2-link">Agencies</Link>
+        <Link to="/" className="bottom-nav-link">Causes</Link>
+        <Link to="/" className="bottom-nav-link">Opportunities</Link>
+        <Link to="/" className="bottom-nav-link">Teams</Link>
+        <Link to="/" className="bottom-nav-link">Agencies</Link>
       </nav>
 
       <img src={mainImg} alt="image" />
@@ -39,8 +39,6 @@ const Volunteer = () => {
       </div>
 
     </div>
-
-
 
 
   )
