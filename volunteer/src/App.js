@@ -9,12 +9,9 @@ function App() {
 
   return (
 
-    <div className="App">
-      {/* <Homepage /> */}
-      <Volunteer/>
     <div style={customStyle} >
-      <Homepage />
-
+      {/* <Homepage /> */}
+      <Volunteer />
     </div>
   );
 }
