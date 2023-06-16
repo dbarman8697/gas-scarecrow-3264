@@ -1,5 +1,6 @@
 import "./App.css";
-import Homepage from "./pages/Homepage";
+
+import Home from "./pages/Home";
 import Volunteer from "./pages/Volunteer";
 
 function App() {
@@ -8,13 +9,12 @@ function App() {
   };
 
   return (
-
     <div className="App">
       {/* <Homepage /> */}
-      <Volunteer/>
-    <div style={customStyle} >
-      <Homepage />
-
+      <Volunteer />
+      <div style={customStyle}>
+        <Home />
+      </div>
     </div>
   );
 }

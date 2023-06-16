@@ -2,14 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import "../pages/style.css";
 import logo from "../Images/CONTRIBUTE_NOW.png";
+import ImageList from "../components/HomePage/SlickCarousel";
 
-const Homepage = () => {
+const Home = () => {
   const HoverText = styled.p`
     &:hover {
       color: gray;
       transition: 0.3s;
     }
   `;
+
   return (
     <div>
       <div style={{ display: "flex", gap: "30px" }}>
@@ -112,14 +114,14 @@ const Homepage = () => {
           <a href="https://www.volyinfo.org" class="Header-nav-item">
             VOLY Info
           </a>
-          <a href="/donate" class="Header-nav-item" >
+          <a href="/donate" class="Header-nav-item">
             Donate
           </a>
         </div>
-        
       </div>
+      <ImageList />
     </div>
   );
 };
 
-export default Homepage;
+export default Home;
