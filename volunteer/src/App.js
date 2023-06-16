@@ -1,20 +1,14 @@
 import "./App.css";
-
-import Home from "./pages/Home";
-import Volunteer from "./pages/Volunteer";
+import AllPages from "./Components/AllPages";
+import Footer from "./Components/Footer/Footer";
+import Home from "./Components/Navbar/NavigationTop";
 
 function App() {
-  const customStyle = {
-    backgroundColor: "#FFFFFF" /* Replace with your desired color */,
-  };
-
   return (
     <div className="App">
-      {/* <Homepage /> */}
-      <Volunteer />
-      <div style={customStyle}>
-        <Home />
-      </div>
+      <Home />
+      <AllPages />
+      <Footer />
     </div>
   );
 }
