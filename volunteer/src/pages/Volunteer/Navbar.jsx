@@ -1,10 +1,9 @@
 import React from 'react'
-import "../pages/Volunteer.css"
 import { Link } from "react-router-dom"
-import logo from "../Images/Logo_voly.png"
-import mainImg from "../Images/Volunteer_page.JPG"
+import logo from "./Volunteer-Images/Logo_voly.png"
+import "./Navbar.css"
 
-const Volunteer = () => {
+const Navbar = () => {
   return (
     <div>
       <nav className="top-navbar">
@@ -24,24 +23,8 @@ const Volunteer = () => {
         <Link to="/" className="bottom-nav-link">Teams</Link>
         <Link to="/" className="bottom-nav-link">Agencies</Link>
       </nav>
-
-      <img src={mainImg} alt="image" />
-
-      <div className="causes-section">
-        <h1>Causes</h1>
-        <p>Decide what you are most passionate about, and make your impact.</p>
-
-        <div className="causes">
-          <div className="causes-card">
-            {/* <img src={} alt="" /> */}
-          </div>
-        </div>
-      </div>
-
     </div>
-
-
   )
 }
 
-export default Volunteer
+export default Navbar

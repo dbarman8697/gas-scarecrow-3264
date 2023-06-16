@@ -1,6 +1,7 @@
 import "./App.css";
 import Homepage from "./pages/Homepage";
-import Volunteer from "./pages/Volunteer";
+import VSignup from "./pages/Volunteer-Signup/VSignup";
+import ASignup from "./pages/Volunteer/Agencies-Signup/ASignup";
 
 function App() {
   const customStyle = {
@@ -11,7 +12,9 @@ function App() {
 
     <div style={customStyle} >
       {/* <Homepage /> */}
-      <Volunteer />
+      {/* <Volunteer/> */}
+      {/* <VSignup/> */}
+      {/* <ASignup/> */}
     </div>
   );
 }
