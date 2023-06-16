@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 const eventSchema = new mongoose.Schema(
   {
     agencyId: String,
+    agencyName: String,
     name: String,
     cagtegory: String,
-    date: Date,
+    date: String,
     time: String,
     phone: Number,
     requiredVolunteers: Number,

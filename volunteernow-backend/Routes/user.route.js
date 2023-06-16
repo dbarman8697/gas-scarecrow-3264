@@ -74,16 +74,23 @@ userRouter.post("/agnecyregister", passwordValidater, async (req, res) => {
   }
 });
 
+//route for login
 userRouter.post("/login", async (req, res) => {
   const { email, password, role } = req.body;
+
+  //checking if the user is a volunteer or an agency
   if (role == "volunteer") {
+    //if the user is a volunteer, then find the volunteer in the database
     const volunteer = await VolunteerModel.findOne({ email: email });
     try {
+      //comparing the password with the password in the database
       bcrypt.compare(password, volunteer.password, (err, result) => {
         if (result) {
-          const token = jwt.sign({ project: "contributenow" }, "contribute", {
+          //if the password matches, then create a token with the expire time of 7 days
+          const token = jwt.sign({ userId: volunteer._id }, "contribute", {
             expiresIn: "7d",
           });
+          //sending the token to the frontend after successful login
           res
             .status(200)
             .json({ msg: "Volunteer logged in successfull", token });
@@ -95,13 +102,21 @@ userRouter.post("/login", async (req, res) => {
       res.status(400).json({ msg: "Somthing went wrong" });
     }
   } else {
+    //if the user is an agency, then find the agency in the database
     const agency = await AgencyModel.findOne({ email: email });
     try {
+      //comparing the password with the password in the database
       bcrypt.compare(password, agency.password, (err, result) => {
         if (result) {
-          const token = jwt.sign({ project: "contributenow" }, "contribute", {
-            expiresIn: "7d",
-          });
+          //if the password matches, then create a token with the expire time of 7 days
+          const token = jwt.sign(
+            { userID: agency._id, agencyname: agency.name },
+            "contribute",
+            {
+              expiresIn: "7d",
+            }
+          );
+          //sending the token to the frontend after successful login
           res.status(200).json({ msg: "Agency logged in successfull", token });
         } else {
           res.status(200).json({ msg: "Wrong credentials" });
@@ -112,10 +127,18 @@ userRouter.post("/login", async (req, res) => {
     }
   }
 });
+
+//exporting the userRouter
 module.exports = { userRouter };
 
 /*
 ***Example volunteer credentials***
-email : mmahetaraslam@gmail.com
-password : aslammmahA3@
+email : nawabpvt@gmail.com
+password : aslam@123A
 */
+
+/*
+***Example agency credentials***
+ "email": "aslam@gmail.com",
+  "password": "aslam@123A"
+*/ 
