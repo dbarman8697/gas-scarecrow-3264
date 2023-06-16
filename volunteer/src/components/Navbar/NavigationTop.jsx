@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import "./style.css";
 import logo from "../../Images/CONTRIBUTE_NOW.png";
 
@@ -14,17 +15,19 @@ const Home = () => {
   return (
     <div>
       <div style={{ display: "flex", gap: "30px" }}>
-        <img
-          src={logo}
-          style={{
-            padding: "50px 0px 0px 0px",
-            marginLeft: "50px",
-            cursor: "pointer",
-            marginTop: "-20px",
-            width: "340px",
-            height: "150px"
-          }}
-        />
+        <Link to={"/"}>
+          <img
+            src={logo}
+            style={{
+              padding: "50px 0px 0px 0px",
+              marginLeft: "50px",
+              cursor: "pointer",
+              marginTop: "-20px",
+              width: "340px",
+              height: "150px",
+            }}
+          />
+        </Link>
 
         <div style={{ display: "flex", gap: "30px" }}>
           <div>
@@ -66,7 +69,7 @@ const Home = () => {
                 fontWeight: "500",
               }}
             >
-              Volunteer
+              <Link to={"/volunteer"}>Volunteer</Link>
             </HoverText>
           </div>
           <div>
