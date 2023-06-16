@@ -200,51 +200,30 @@ export default function SimpleSlider() {
       <Slider {...settings1} className={styles.bannerSlider2}>
         <div>
           <img
-            src="  https://d32baadbbpueqt.cloudfront.net/Homepage/e320d245-5aeb-4433-b0b1-9a67c2d78303.jpg
-"
-            alt=""
+            src="https://images.squarespace-cdn.com/content/v1/5c9001be7fdcb89c5f59bc3f/1683295470538-N34A8RL56FEGXIPAELCX/looking-to-volunteer-texas-75204.jpg?format=1500w"
+            alt="img"
+            style={{ width: "90%", height: "400px", margin: "auto" }}
           />
         </div>
         <div>
           <img
-            src="  https://d32baadbbpueqt.cloudfront.net/Homepage/0b94d1b3-8011-435b-b38d-8acdc8f53710.jpg
-"
+            src="https://images.squarespace-cdn.com/content/v1/5c9001be7fdcb89c5f59bc3f/1683295473750-HWE21R3I2203TPBY8AFN/apply-csr-online.jpg?format=1500w"
             alt=""
+            style={{ width: "90%", height: "400px", margin: "auto" }}
           />
         </div>
         <div>
           <img
-            src="  https://d32baadbbpueqt.cloudfront.net/Homepage/8f3b13ce-686b-4bd1-b2e5-e2534e2de3ec.gif
-"
+            src="https://images.squarespace-cdn.com/content/v1/5c9001be7fdcb89c5f59bc3f/1683295471208-LBROMK5MRJBGFM5ZO4EI/schedule-demo-voly.jpg?format=1500w"
             alt=""
+            style={{ width: "90%", height: "400px", margin: "auto" }}
           />
         </div>
         <div>
           <img
-            src="  https://d32baadbbpueqt.cloudfront.net/Homepage/5edfd368-351e-47e7-8384-6bca3eb16df9.jpg
-"
+            src="https://images.squarespace-cdn.com/content/v1/5c9001be7fdcb89c5f59bc3f/1683295471406-ZFGI1QJ0HZBV9H0E5WEG/volunteernow-voly-discount-depot-sign-up-sales.jpg?format=1500w"
             alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="  https://d32baadbbpueqt.cloudfront.net/Homepage/0004c0e1-9c86-430f-8d94-293724658e3f.jpg
-"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="  https://d32baadbbpueqt.cloudfront.net/Homepage/0e92b87a-f7d0-4b9b-955f-69d072926812.jpg
-"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="  https://d32baadbbpueqt.cloudfront.net/Homepage/de7f55a1-a84b-4690-8f11-1dddc2518964.jpg
-"
-            alt=""
+            style={{ width: "90%", height: "400px", margin: "auto" }}
           />
         </div>
       </Slider>
