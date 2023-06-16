@@ -1,0 +1,16 @@
+.footer-section {
+    background-color: rgb(68, 67, 67);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+    height: 300px;
+    padding: 0px 50px 0px 50px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
