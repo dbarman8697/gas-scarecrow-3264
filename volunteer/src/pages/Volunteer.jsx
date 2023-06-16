@@ -13,7 +13,7 @@ const Volunteer = () => {
           <Link to="/" className="top-nav-link">Who We Serve</Link>
         </div>
         <div className="right-links">
-          <Link to="/" className="top-nav-link">Create Account</Link>
+          <Link to="/login" className="top-nav-link">Create Account</Link>
           <Link to="/" className="top-nav-link">Login</Link>
         </div>
       </nav>
