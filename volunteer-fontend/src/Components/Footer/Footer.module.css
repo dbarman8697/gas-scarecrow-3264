@@ -1,0 +1,32 @@
+.div1 {
+  background-color: white;
+}
+
+.container {
+  background-color: #383838;
+  height: 500px;
+  margin-top: 50px;
+  width: 100%;
+  color: white;
+}
+.container1 {
+  text-align: left;
+  padding-top: 85px;
+  padding-left: 80px;
+}
+
+.container2 {
+  text-align: left;
+  padding-top: 85px;
+  padding-left: 280px;
+}
+
+
+@media screen and (max-width: 786px) {
+  .div4 {
+    flex-direction: column;
+  }
+  .ugly {
+    flex-direction: column;
+  }
+}
