@@ -1,0 +1,79 @@
+.signup-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 2rem;
+    /* border: 1px solid black; */
+}
+
+.signup-form {
+    flex: 1;
+    max-width: 400px;
+    /* border: 1px solid black; */
+    margin-top: -50px;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    text-align: left;
+    /* Align label text to the left */
+}
+
+input {
+    padding: 0.9rem;
+    height: 40px;
+    text-indent: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 40px;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.already-login {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+    /* border: 1px solid black; */
+}
+
+.already-login p {
+    margin-bottom: 0.5rem;
+}
+
+.already-login button {
+    background-color: rgb(150, 34, 150);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.already-login button:hover {
+    background-color: rgb(73, 10, 73);
+}
