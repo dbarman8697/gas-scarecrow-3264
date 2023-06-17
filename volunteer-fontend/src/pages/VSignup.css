@@ -77,3 +77,24 @@ input[type="submit"]:hover {
 .already-login button:hover {
     background-color: rgb(73, 10, 73);
 }
+
+.role-selection {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.role-option {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+  color: #999;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+  gap: 10px;
+}
+
+.role-option.active {
+  color: #e50914;
+}

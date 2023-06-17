@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import alredylogin from "../Images/already-login.JPG"
 import Navbar from '../pages/Navbar'
 import "./ASignup.css"
+import { Link } from 'react-router-dom'
 
 
 const Agencysignup = () => {
@@ -50,16 +51,18 @@ const Agencysignup = () => {
     <div>
       <Navbar />
       <div className="signup-section">
-
         <div className="signup-form">
           <form action="" onSubmit={handleSubmit}>
             <h1>Create Your Nonprofit Account!</h1>
-            <p>We need some basic information about your agency in order to verify your nonprofit status.</p>
+            <p>
+              We need some basic information about your agency in order to
+              verify your nonprofit status.
+            </p>
             <br />
             <input
               type="text"
               placeholder="name"
-              name='name'
+              name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -67,7 +70,7 @@ const Agencysignup = () => {
             <input
               type="text"
               placeholder="email"
-              name='email'
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -75,7 +78,7 @@ const Agencysignup = () => {
             <input
               type="text"
               placeholder="phone"
-              name='phone'
+              name="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -83,7 +86,7 @@ const Agencysignup = () => {
             <input
               type="text"
               placeholder="zip"
-              name='zip'
+              name="zip"
               value={zip}
               onChange={(e) => setZip(e.target.value)}
             />
@@ -91,7 +94,7 @@ const Agencysignup = () => {
             <input
               type="text"
               placeholder="address"
-              name='address'
+              name="address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
@@ -99,7 +102,7 @@ const Agencysignup = () => {
             <input
               type="text"
               placeholder="city"
-              name='city'
+              name="city"
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
@@ -107,7 +110,7 @@ const Agencysignup = () => {
             <input
               type="text"
               placeholder="state"
-              name='state'
+              name="state"
               value={state}
               onChange={(e) => setState(e.target.value)}
             />
@@ -115,7 +118,7 @@ const Agencysignup = () => {
             <input
               type="password"
               placeholder="password"
-              name='password'
+              name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -127,14 +130,20 @@ const Agencysignup = () => {
         <div className="already-login">
           <p>Already Have An Account? </p>
           <p>Please log in.</p>
-          <button>Login</button> <br /> <br />
-          <img src={alredylogin} alt="login" style={{ border: "1px solid black" }} />
+          <Link to={"/loginVolunteer"}>
+            {" "}
+            <button>Login</button>
+          </Link>{" "}
+          <br /> <br />
+          <img
+            src={alredylogin}
+            alt="login"
+            style={{ border: "1px solid black" }}
+          />
         </div>
       </div>
-
-
     </div>
-  )
+  );
 }
 
 export default Agencysignup
