@@ -1,57 +1,95 @@
-import "../pages/Volunteer.css";
-import { Link } from "react-router-dom";
-import logo from "../Images/Logo_voly.png";
-import mainImg from "../Images/Volunteer_page.JPG";
+import React from 'react'
+import "./Volunteer.css"
+import { Link } from "react-router-dom"
+import mainImg from "../Images/Volunteer_page.JPG"
+import animal from "../Images/Animals.JPG"
+import art from "../Images/Art-culture.JPG"
+import mental from "../Images/mental-wellness.jpg"
+import community from "../Images/community.JPG"
+import disaster from "../Images/disaster-management.jpg"
+import education from "../Images/education.jpg"
+import search from "../Images/search-logo.png"
+import vlogo from "../Images/V-logo.png"
+import track from "../Images/track-logo.png"
+import Navbar from './Navbar'
+
 
 const Volunteer = () => {
   return (
     <div>
-      <nav className="top-navbar">
-        <div className="left-links">
-          <Link to="/" className="top-nav-link">
-            Who We Are
-          </Link>
-          <Link to="/" className="top-nav-link">
-            Who We Serve
-          </Link>
-        </div>
-        <div className="right-links">
-          <Link to="/login" className="top-nav-link">
-            Create Account
-          </Link>
-          <Link to="/" className="top-nav-link">
-            Login
-          </Link>
-        </div>
-      </nav>
-      <nav className="bottom-navbar">
-        <img src={logo} alt="logo" width={"200px"} height={"100px"} />
-        <Link to="/" className="bottom-nav-link">
-          Causes
-        </Link>
-        <Link to="/" className="bottom-nav-link">
-          Opportunities
-        </Link>
-        <Link to="/" className="bottom-nav-link">
-          Teams
-        </Link>
-        <Link to="/" className="bottom-nav-link">
-          Agencies
-        </Link>
-      </nav>
-
+      <Navbar />
       <img src={mainImg} alt="image" />
 
-      <div className="causes-section">
-        <h1>Causes</h1>
-        <p>Decide what you are most passionate about, and make your impact.</p>
+      <div className="content-container">
+        <div className="text-container">
+          <h1>Causes</h1>
+          <p>Decide what you are most passionate about and make your impact.</p>
+        </div>
 
-        <div className="causes">
-          <div className="causes-card">{/* <img src={} alt="" /> */}</div>
+        <div className="causes-section">
+          <div className="all-causes">
+            <div className="causes-card">
+              <img src={animal} alt="animal" />
+              <p>Animals</p>
+            </div>
+
+            <div className="causes-card">
+              <img src={art} alt="animal" />
+              <p>Art & Culture</p>
+            </div>
+            <div className="causes-card">
+              <img src={mental} alt="animal" />
+              <p>Behavioural & Mental Helath</p>
+            </div>
+            <div className="causes-card">
+              <img src={community} alt="animal" />
+              <p>Community Development</p>
+            </div>
+            <div className="causes-card">
+              <img src={disaster} alt="animal" />
+              <p>Disaster & Emergency Preparedness</p>
+            </div>
+            <div className="causes-card">
+              <img src={education} alt="animal" />
+              <p>Education</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
 
-export default Volunteer;
+      <div className="how-work-section">
+        <h1>How does it work?</h1>
+
+        <div className="working-cards">
+          <div className="card">
+            <img src={search} width={100} height={100} alt="search-logo" />
+            <p>Find
+              Browse from thousands of opportunities. Locate based off of interests, skills,
+              location or even need.</p><br />
+            <Link to="/browse-opportunities">Browse Opportunities</Link>
+          </div>
+
+          <div className="card">
+            <img src={vlogo} width={100} height={100} alt="search-logo" />
+            <p>Find
+              Browse from thousands of opportunities. Locate based off of interests, skills,
+              location or even need.</p><br />
+            <Link to="/browse-opportunities">Create your account</Link>
+          </div>
+
+          <div className="card">
+            <img src={track} width={100} height={100} alt="search-logo" />
+            <p>Find
+              Browse from thousands of opportunities. Locate based off of interests, skills,
+              location or even need.</p><br />
+            <Link to="/browse-opportunities">Access your account</Link>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  )
+}
+
+export default Volunteer

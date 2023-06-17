@@ -1,140 +1,106 @@
-import React, { useState } from "react";
-import "./style.css";
-import axios from "axios";
-import { useNavigate } from "react-router";
-
-const initialState = {
-  name: "",
-  email: "",
-  phone: 0,
-  zip: 0,
-  password: 0,
-};
+import React, { useState } from 'react'
+import Navbar from '../pages/Navbar'
+import alredylogin from "../Images/already-login.JPG"
+import "./VSignup.css"
 
 const Volunteersignup = () => {
-  const [formState, setFormState] = useState(initialState);
-  const navigate = useNavigate();
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [zip, setZip] = useState("")
+  const [password, setPassword] = useState("")
 
-  const handleChange = (e) => {
-    let { name, value } = e.target;
-    setFormState({ ...formState, [name]: value });
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const payload = {
+      name,
+      email,
+      phone,
+      zip,
+      password
+    }
 
-  const handleSignup = (e) => {
-    e.preventDefault();
-    axios
-      .post("https://reqres.in/api/register", formState, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        navigate("/loginVolunteer");
-      })
-      .catch((error) => console.error(error));
-  };
+    fetch("https://reqres.in/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    }).then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+
+    setName("")
+    setEmail("")
+    setPhone("")
+    setPassword("")
+    setZip("")
+
+  }
 
   return (
     <div>
-      <h1
-        style={{
-          fontSize: "42px",
-          letterSpacing: "1px",
-          fontFamily: "fantasy",
-          marginTop: "50px",
-          marginBottom: "50px",
-          color: "#383838",
-          textAlign: "center",
-        }}
-      >
-        Become A Volunteer
-      </h1>
-      <div>
-        <form onSubmit={handleSignup}>
-          <input
-            type="text"
-            placeholder="Full Name"
-            name="name"
-            onChange={handleChange}
-            style={{
-              boxShadow: "20px 20px 10px grey",
-              border: "1px solid gray",
-              width: "60vh",
-              padding: "1.5vh",
-            }}
-          />
-          <br />
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            onChange={handleChange}
-            style={{
-              boxShadow: "20px 20px 10px grey",
-              border: "1px solid gray",
-              width: "60vh",
-              padding: "1.5vh",
-            }}
-          />
-          <br />
-          <input
-            type="number"
-            placeholder="Contact Number"
-            name="phone"
-            onChange={handleChange}
-            style={{
-              boxShadow: "20px 20px 10px grey",
-              border: "1px solid gray",
-              width: "60vh",
-              padding: "1.5vh",
-            }}
-          />
-          <br />
-          <input
-            type="number"
-            placeholder="Zip Code"
-            name="zip"
-            onChange={handleChange}
-            style={{
-              boxShadow: "20px 20px 10px grey",
-              border: "1px solid gray",
-              width: "60vh",
-              padding: "1.5vh",
-            }}
-          />
-          <br />
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={handleChange}
-            style={{
-              boxShadow: "20px 20px 10px grey",
-              border: "1px solid gray",
-              width: "60vh",
-              padding: "1.5vh",
-            }}
-          />
-          <br />
-          <input
-            type="submit"
-            value="Register"
-            style={{
-              boxShadow: "20px 20px 10px grey",
-              border: "1px solid gray",
-              width: "30vh",
-              padding: "1.5vh",
-              borderRadius: "30px",
-              fontWeight: "bold",
-              marginTop: "20px",
-              cursor: "pointer",
-            }}
-          />
-        </form>
-      </div>
-    </div>
-  );
-};
+      <Navbar />
+      <div className="signup-section">
+        <div className="signup-form">
+          <form action="" onSubmit={handleSubmit}>
+            <h1>Create A Volunteer Account!</h1> <br />
+            <input
+              type="text"
+              placeholder="name"
+              name='name'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-export default Volunteersignup;
+            <input
+              type="text"
+              placeholder="email"
+              name='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <input
+              type="text"
+              placeholder="phone"
+              name='phone'
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+
+            <input
+              type="text"
+              placeholder="zip"
+              name='zip'
+              value={zip}
+              onChange={(e) => setZip(e.target.value)}
+            />
+
+            <input
+              type="password"
+              placeholder="password"
+              name='password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+
+        <div className="already-login">
+          <p>Already Have An Account? </p>
+          <p>Please log in.</p>
+          <button>Login</button> <br /> <br />
+          <img src={alredylogin} alt="login" style={{ border: "1px solid black" }} />
+        </div>
+      </div>
+
+
+    </div>
+  )
+}
+
+export default Volunteersignup
+
