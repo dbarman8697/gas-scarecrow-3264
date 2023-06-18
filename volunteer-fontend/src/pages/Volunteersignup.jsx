@@ -3,6 +3,7 @@ import Navbar from "../pages/Navbar";
 import alredylogin from "../Images/already-login.JPG";
 import { Link, useNavigate } from "react-router-dom";
 import "./VSignup.css";
+import { useToast } from "@chakra-ui/react";
 
 const Volunteersignup = () => {
   const [name, setName] = useState("");
@@ -12,6 +13,7 @@ const Volunteersignup = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const toast = useToast();
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = {
@@ -22,7 +24,7 @@ const Volunteersignup = () => {
       password,
     };
 
-    fetch("https://reqres.in/api/register", {
+    fetch("https://real-teal-hen-boot.cyclic.app/users/volunteerregister", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,9 +34,7 @@ const Volunteersignup = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        if (res.id) {
-          navigate("/loginVolunteer");
-        }
+        navigate("/loginVolunteer");
       })
       .catch((err) => console.log(err));
 
@@ -43,6 +43,14 @@ const Volunteersignup = () => {
     setPhone("");
     setPassword("");
     setZip("");
+
+    toast({
+      title: "Account created.",
+      description: `We've created your account for ${name}.`,
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
   };
 
   return (

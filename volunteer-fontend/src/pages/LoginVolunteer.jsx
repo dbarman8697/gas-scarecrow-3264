@@ -4,7 +4,7 @@ import axios from "axios";
 import alredylogin from "../Images/already-login.JPG";
 import { useNavigate } from "react-router-dom";
 import "./VSignup.css";
-
+import { useToast } from "@chakra-ui/react";
 const initialState = {
   email: "",
   password: "",
@@ -14,6 +14,8 @@ const LoginVolunteer = () => {
   const [formState, setFormState] = useState(initialState);
   const navigate = useNavigate();
 
+  const toast = useToast();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormState({ ...formState, [name]: value });
@@ -21,14 +23,21 @@ const LoginVolunteer = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("https://reqres.in/api/login", formState, {
+      .post("https://real-teal-hen-boot.cyclic.app/users/login", formState, {
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then((res) => {
         console.log(res.data.token);
-        localStorage.setItem("new_token", res.data.token);
+        localStorage.setItem("token", res.data.token);
+        toast({
+          title: "Logged in Successfull.",
+          // description: "",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
         navigate("/events");
       });
   };

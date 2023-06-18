@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <Home />
       <AllPages />
-      <Events />
       <Footer />
     </div>
   );

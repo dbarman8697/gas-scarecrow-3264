@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
 
   //this function will be called when the page is loaded and it will get all the events of the agency
   const getEvents = async () => {
+    let token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDhjYjVhOTUwMGQ0NDQ1ZmFjODI0MmYiLCJhZ2VuY3luYW1lIjoiY2hldGFuIiwiaWF0IjoxNjg3MDM2MTg0LCJleHAiOjE2ODc2NDA5ODR9.pU2wdkRNQof8UVGoblA8X6GAH4SaqP_jzFVhCqL3PZI";
     const res = await axios.get(
-      "https://embarrassed-dog-cap.cyclic.app/agency/getallevents",
+      "https://real-teal-hen-boot.cyclic.app/agency/getallevents",
       {
-        // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDhjYjVhOTUwMGQ0NDQ1ZmFjODI0MmYiLCJhZ2VuY3luYW1lIjoiY2hldGFuIiwiaWF0IjoxNjg3MDM2MTg0LCJleHAiOjE2ODc2NDA5ODR9.pU2wdkRNQof8UVGoblA8X6GAH4SaqP_jzFVhCqL3PZI//
         // use this token to get all events of agency for testing
-
         headers: {
-          Authorization: "Bearer " + localStorage.getItem("token") || "",
+          Authorization: `Bearer ${token}`,
         },
       }
     );
@@ -26,13 +27,6 @@ const Events = () => {
   useEffect(() => {
     getEvents();
   }, []);
-
-  //after clicking on view event button this function will be called and it will store the event id in local storage and redirect to event page
-  const viewEvent = (id) => {
-    console.log(id);
-    localStorage.setItem("event_id", id);
-    window.location.href = "/event";
-  };
 
   return (
     <DIV style={{ paddingLeft: "12%", paddingRight: "12%" }}>
@@ -78,9 +72,9 @@ const Events = () => {
                 {event.requiredVolunteers}
               </div>
             </div>
-            <div id="view" onClick={viewEvent(event._id)}>
-              View Event
-            </div>
+            <Link to={`${event._id}`}>
+              <div id="view">View Event</div>
+            </Link>
           </div>
         );
       })}

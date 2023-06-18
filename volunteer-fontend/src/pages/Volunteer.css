@@ -21,22 +21,23 @@
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
     gap: 20px;
-    /* border: 1px solid green; */
 }
 
 .causes-card {
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid black;
     cursor: pointer;
     width: 100%;
 }
 
 .causes-card p {
     background-color: gray;
+    padding: 5px;
+    border-radius: 5px;
 }
-.causes-card p:hover{
+
+.causes-card p:hover {
     background-color: black;
     color: white;
 }
@@ -44,6 +45,8 @@
 .causes-card img {
     width: 100%;
     height: 200px;
+    border-radius: 10px;
+    margin-bottom: 5px;
 }
 
 .how-work-section {
@@ -51,29 +54,32 @@
     background-color: rgb(228, 224, 224);
     padding: 40px;
 }
-.how-work-section h1{
-   display: flex;
-   justify-content: center;
+
+.how-work-section h1 {
+    display: flex;
+    justify-content: center;
 }
-.working-cards{
-  /* border: 1px solid black; */
-  display: flex;
-  margin: auto;
-  gap: 20px;
-  width: 60%;
-  padding: 40px;
+
+.working-cards {
+    /* border: 1px solid black; */
+    display: flex;
+    margin: auto;
+    gap: 20px;
+    width: 60%;
+    padding: 40px;
 
 }
 
-.card{
+.card {
     /* border: 1px solid green; */
     padding: 20px;
     width: 100%;
 }
-.card Link{
-    text-decoration: none;  
+
+.card Link {
+    text-decoration: none;
 }
 
-.card Link:hover{
+.card Link:hover {
     color: green;
 }

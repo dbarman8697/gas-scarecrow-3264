@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
-import alredylogin from "../Images/already-login.JPG"
-import Navbar from '../pages/Navbar'
-import "./ASignup.css"
-import { Link } from 'react-router-dom'
-
+import React, { useState } from "react";
+import alredylogin from "../Images/already-login.JPG";
+import Navbar from "../pages/Navbar";
+import "./ASignup.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const Agencysignup = () => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [zip, setZip] = useState("")
-  const [address, setAddress] = useState("")
-  const [city, setCity] = useState("")
-  const [state, setState] = useState("")
-  const [password, setPassword] = useState("")
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [zip, setZip] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [password, setPassword] = useState("");
 
-
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const payload = {
       name,
       email,
@@ -25,28 +25,34 @@ const Agencysignup = () => {
       address,
       city,
       state,
-      password
-    }
+      password,
+    };
 
-    fetch("/url", {
+    fetch("https://real-teal-hen-boot.cyclic.app/users/agnecyregister", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload)
-    }).then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err))
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res) {
+          console.log(res);
+          navigate("/loginVolunteer");
+        }
+      })
+      .catch((err) => console.log(err));
 
-    setName("")
-    setEmail("")
-    setPhone("")
-    setZip(0)
-    setAddress("")
-    setCity("")
-    setState("")
-    setPassword("")
-  }
+    setName("");
+    setEmail("");
+    setPhone("");
+    setZip(0);
+    setAddress("");
+    setCity("");
+    setState("");
+    setPassword("");
+  };
   return (
     <div>
       <Navbar />
@@ -144,6 +150,6 @@ const Agencysignup = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Agencysignup
+export default Agencysignup;
