@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const cart = createSlice({
- name: 'cart',
-  initialState:{
-cartItems: [],
-searchState: '',
-userName:'Login/Register'
+  name: 'cart',
+  initialState: {
+    cartItems: [],
+    searchState: '',
+    userName: 'Login/Register'
   },
   reducers: {
 
@@ -36,11 +36,11 @@ userName:'Login/Register'
       state.cartItems = removeItem;
     },
 
-    toggleSearch:(state,action)=>{
-      state.searchState= action.payload;
+    toggleSearch: (state, action) => {
+      state.searchState = action.payload;
     },
-    toggleUsername:(state,action)=>{
-      state.userName=action.payload;
+    toggleUsername: (state, action) => {
+      state.userName = action.payload;
     }
     /* addtoCart:(state,action)=>{
         state.cartItems.push(action.payload);
@@ -63,6 +63,6 @@ userName:'Login/Register'
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart,incrementQuantity,decrementQuantity,removeItem,toggleSearch,toggleUsername} = cart.actions
+export const { addToCart, incrementQuantity, decrementQuantity, removeItem, toggleSearch, toggleUsername } = cart.actions
 
 export default cart.reducer

@@ -23,19 +23,20 @@ const Agencysignup = () => {
     setFormState({ ...formState, [name]: value });
   };
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    axios
-      .post("https://reqres.in/api/register", formState, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
+    console.log(formState);
+    try {
+      let req = await axios.post(
+        "https://embarrassed-dog-cap.cyclic.app/users/agnecyregister",
+        formState
+      );
+      if (req.status === 200) {
         navigate("/loginAgency");
-      })
-      .catch((error) => console.error(error));
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -55,7 +56,6 @@ const Agencysignup = () => {
       </h1>
       <div>
         <form onSubmit={handleSignup}>
-         
           <input
             type="email"
             placeholder="Email"

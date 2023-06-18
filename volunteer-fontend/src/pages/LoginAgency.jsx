@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const LoginAgency = () => {
-  return (
-    <div>LoginAgency</div>
-  )
-}
+  return <div>LoginAgency</div>;
+};
 
-export default LoginAgency
+export default LoginAgency;

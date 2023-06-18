@@ -41,7 +41,7 @@ const Home = () => {
                 fontWeight: "500",
               }}
             >
-              About ContributeNow
+              <Link to={"/agencyDashboard"}>About ContributeNow</Link>
             </HoverText>
           </div>
           <div>

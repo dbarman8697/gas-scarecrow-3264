@@ -6,6 +6,7 @@ import Volunteersignup from "../pages/Volunteersignup";
 import Agencysignup from "../pages/Agencysignup";
 import LoginVolunteer from "../pages/LoginVolunteer";
 import LoginAgency from "../pages/LoginAgency";
+import EventPage from "../pages/EventPage";
 
 function AllPages() {
   return (
@@ -18,6 +19,7 @@ function AllPages() {
         <Route path="/agenciessignup" element={<Agencysignup />} />
         <Route path="/loginVolunteer" element={<LoginVolunteer />} />
         <Route path="/loginAgency" element={<LoginAgency />} />
+        <Route path="/agencyDashboard" element={<EventPage />} />
       </Routes>
     </div>
   );
