@@ -20,6 +20,8 @@ https://real-teal-hen-boot.cyclic.app/
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="40" width="52" alt="npm logo"  />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" width="52" alt="vscode logo"  />
   <img src="https://www.happylifecreators.com/wp/wp-content/uploads/2022/06/chakra-ui_title2-400x400.png" height="40" width="52" alt="Chakra-ui"  />
+  <img src="https://nodejs.org/static/images/logo.svg" height="40" width="52" alt="NodeJS"  />
+  
 
 </div>
 <hr>
