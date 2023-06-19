@@ -10,10 +10,6 @@ To Preview My actual Site You can simply click below on the link 👇👇 🌐 h
 Backend deployed on cyclic 👇👇 🌐
 https://real-teal-hen-boot.cyclic.app/
 
-And here are some Snapshots of CONTRIBUTE NOW please do have a look ✅
-
-![logo](/volunteer-fontend/src/Images/CONTRIBUTE_NOW.png)
-
 # Tech Stack
 
 <div align="center">
