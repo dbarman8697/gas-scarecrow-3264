@@ -11,7 +11,8 @@ Backend deployed on cyclic 👇👇 🌐
 https://real-teal-hen-boot.cyclic.app/
 
 And here are some Snapshots of CONTRIBUTE NOW please do have a look ✅
-<img src="/volunteer-fontend/src/Images/CONTRIBUTE_NOW.png"/>
+
+![logo](/volunteer-fontend/src/Images/CONTRIBUTE_NOW.png)
 
 # Tech Stack
 
